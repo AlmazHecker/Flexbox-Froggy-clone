@@ -1,0 +1,11 @@
+
+
+.instructions {
+    padding-top: 1rem;
+}
+
+.instructions, .instructions p, .instructions ul {
+    margin: 0;
+    padding-bottom: 1em;
+}
+

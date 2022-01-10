@@ -1,0 +1,36 @@
+
+
+.lilypad, .frog {
+    position: relative;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+}
+
+
+
+
+.lilypad .bg {
+    transform: scale(0.95333) rotate(341.478deg);
+}
+
+.lilypad.green .bg {
+    background-image: url('../../../../public/assets/lilypad-green.svg');
+}
+
+.lilypad.yellow .bg {
+    background-image: url('../../../../public/assets/lilypad-yellow.svg');
+}
+
+.lilypad.red .bg {
+    background-image: url('../../../../public/assets/lilypad-red.svg');
+}
+
+
+.lilypad .bg, .frog .bg {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
