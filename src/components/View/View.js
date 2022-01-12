@@ -2,8 +2,8 @@
 import classes from './View.module.css'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { complete, notComplete } from '../store/levelSlice'
-import { isAnagram } from '../utils/helpers'
+import { complete, notComplete } from '../../store/levelSlice'
+import { isAnagram } from '../../utils/helpers'
 import Frogs from './Frogs/Frogs'
 import Lilypads from './Lilypads/Lilypads'
 
