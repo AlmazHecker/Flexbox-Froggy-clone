@@ -1,7 +1,7 @@
 import classes from './Header.module.css'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { reset, setCurrent } from '../../../store/levelSlice'
+import { setCurrent } from '../../../store/levelSlice'
 import PreviousButton from './PreviousButton/PreviousButton'
 import NextButton from './NextButton/NextButton'
 import LevelIndicator from './LevelIndicator/LevelIndicator'
@@ -17,8 +17,7 @@ export default function Header() {
 
    const level = levels.find((item) => item.level === currentLevel)
 
-   function levelChangeHandler(levelName) {
-      dispatch(setCurrent(levelName))
+   const closeDropdownMenu = () => {
       setIsShowLevels(false)
    }
 
@@ -31,10 +30,6 @@ export default function Header() {
    function previousLevel() {
       setIsShowLevels(false)
       dispatch(setCurrent(currentLevel - 1))
-   }
-
-   function resetLevels() {
-      dispatch(reset())
    }
 
    function showLevelsHandler(e) {
@@ -57,11 +52,7 @@ export default function Header() {
             <NextButton onClick={nextLevel} />
 
             {isShowLevels && (
-               <DropDownMenu
-                  onLevelReset={resetLevels}
-                  onLevelSelect={levelChangeHandler}
-                  levels={levels}
-               />
+               <DropDownMenu onClose={closeDropdownMenu} levels={levels} />
             )}
          </div>
       </header>

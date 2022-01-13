@@ -1,13 +1,21 @@
 import classes from '../Header.module.css'
 import React from 'react'
 import LevelMenuItem from '../../Levels/LevelMenuItem'
+import { reset, setCurrent } from '../../../../store/levelSlice'
+import { useDispatch } from 'react-redux'
 
-const DropDownMenu = ({
-   onLevelSelect,
-   onLevelReset,
-   levels,
-   ...otherProps
-}) => {
+const DropDownMenu = ({ levels, onClose, ...otherProps }) => {
+   const dispatch = useDispatch()
+
+   function levelChangeHandler(levelName) {
+      dispatch(setCurrent(levelName))
+      onClose()
+   }
+
+   function resetLevels() {
+      dispatch(reset())
+   }
+
    return (
       <div
          className={`${classes.levelsWrapper} ${classes.tooltip}`}
@@ -18,11 +26,11 @@ const DropDownMenu = ({
                <LevelMenuItem
                   key={level.level}
                   level={level}
-                  onLevelSelect={onLevelSelect}
+                  onLevelSelect={levelChangeHandler}
                />
             ))}
          </div>
-         <div className={classes.labelReset} onClick={onLevelReset}>
+         <div className={classes.labelReset} onClick={resetLevels}>
             Сбросить
          </div>
       </div>
