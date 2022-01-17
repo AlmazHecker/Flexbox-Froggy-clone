@@ -4,7 +4,6 @@ const initState = {
 
     userStyles: '',
     currentLevel: 1,
-
     
     levels: [
     {

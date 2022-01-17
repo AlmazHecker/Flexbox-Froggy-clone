@@ -22,7 +22,7 @@ const levelSlice = createSlice({
             if(action.payload > 24 || action.payload === 0) return
 
             // 
-            state.currentLevel = action.payload // 2
+            state.currentLevel = action.payload
             
             
             state.levels = state.levels.map(item => ({...item, current: false}) )
