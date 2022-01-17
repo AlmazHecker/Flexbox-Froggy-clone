@@ -4,7 +4,7 @@ import classes from './Frogs.module.css'
 import React from 'react'
 
 
-export default function Frog({color, id}) {
+export default function Frogы({color, id}) {
     return <div className={`${classes.frog} ${classes[color]}`} id={id}>
             <div className={classes.bg}></div>
         </div>            

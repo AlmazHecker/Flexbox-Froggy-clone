@@ -26,7 +26,6 @@ export default function Header() {
       dispatch(setCurrent(currentLevel + 1))
    }
 
-   // предыдущий уровень <
    function previousLevel() {
       setIsShowLevels(false)
       dispatch(setCurrent(currentLevel - 1))

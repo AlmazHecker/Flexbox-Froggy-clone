@@ -7,6 +7,10 @@ import classes from './titles.module.css'
         <a href={href} target={'_blank'} rel='noreferrer'>{children}</a> 
     </code>
 
+    const PropertyWrapper = ({property, itDoes}) => <li>
+        <code>{property}</code>{itDoes}
+    </li>
+
     const justifyContent = 'https://developer.mozilla.org/ru/docs/Web/CSS/justify-content'
 
     const alignItems = 'https://developer.mozilla.org/ru/docs/Web/CSS/align-items'
@@ -35,21 +39,11 @@ import classes from './titles.module.css'
                 которое выравнивает элементы горизонтально и принимает следующие значения:
             </p>
         <ul>
-            <li>
-                <code>flex-start</code>: Элементы выравниваются по левой стороне контейнера.
-            </li>
-                <li>
-                    <code>flex-end</code>: Элементы выравниваются по правой стороне контейнера.
-                </li>
-                <li>
-                    <code>center</code>: Элементы выравниваются по центру контейнера.
-                </li>
-                <li>
-                    <code>space-between</code>: Элементы отображаются с одинаковыми отступами между ними.
-                </li>
-                <li>
-                    <code>space-around</code>: Элементы отображаются с одинаковыми отступами вокруг них.
-                </li>
+            <PropertyWrapper property={'flex-start'} itDoes={': Элементы выравниваются по левой стороне контейнера.'}/>
+            <PropertyWrapper property={'flex-end'} itDoes={': Элементы выравниваются по правой стороне контейнера.'} />
+            <PropertyWrapper property={'center'} itDoes={': Элементы выравниваются по центру контейнера.'} />
+            <PropertyWrapper property={'space-between'} itDoes={': Элементы отображаются с одинаковыми отступами между ними.'} />
+            <PropertyWrapper property={'space-around'} itDoes={': Элементы отображаются с одинаковыми отступами вокруг них.'}/>
         </ul>
             <p>Например, <code>justify-content: flex-end;</code> сдвинет лягушонка вправо.</p>
         </>),
@@ -65,20 +59,11 @@ import classes from './titles.module.css'
             </p>
 
             <ul>
-                <li>
-                    <code>flex-start</code>: Элементы выравниваются по левой стороне контейнера.
-                </li>
-                <li>
-                    <code>flex-end</code>: Элементы выравниваются по правой стороне контейнера.
-                </li>
-                <li>
-                    <code>center</code>: Элементы выравниваются по центру контейнера.
-                </li>
-                    <li><code>space-between</code>: Элементы отображаются с одинаковыми отступами между ними.
-                </li>
-                <li>
-                    <code>space-around</code>: Элементы отображаются с одинаковыми отступами вокруг них.
-                </li>
+                <PropertyWrapper property={'flex-start'} itDoes={': Элементы выравниваются по левой стороне контейнера.'}/>
+                <PropertyWrapper property={'flex-end'} itDoes={': Элементы выравниваются по правой стороне контейнера.'}/>
+                <PropertyWrapper property={'center'} itDoes={': Элементы выравниваются по центру контейнера.'}/>
+                <PropertyWrapper property={'space-between'} itDoes={': Элементы отображаются с одинаковыми отступами между ними.'}/>
+                <PropertyWrapper property={'space-around'} itDoes={': Элементы отображаются с одинаковыми отступами вокруг них.'}/>
             </ul>
         </>),
 
@@ -95,10 +80,7 @@ import classes from './titles.module.css'
             <p>
                 Если ты чувствуешь, что забыл возможные значения свойства, 
                 ты можешь навести курсор на название свойства, чтоб посмотреть их. Попробуй навести курсор на 
-               
-            <code className={classes.help}>
-                <a href={justifyContent} >justify-content</a>.
-            </code> 
+            <CodeWrapper href={justifyContent}>justify-content</CodeWrapper>
             </p>
         </>),
 
@@ -123,21 +105,12 @@ import classes from './titles.module.css'
                 чтоб помочь лягушатам добратся к нижней части пруда. Это CSS свойство выравнивает элементы вертикально и принимает следующие значения:
             </p>
             <ul>
-                <li>
-                    <code>flex-start</code>: Элементы выравниваются по верхнему краю контейнера.
-                </li>
-                <li>
-                    <code>flex-end</code>: Элементы выравниваются по нижнему краю контейнера.
-                </li>
-                <li>
-                    <code>center</code>: Элементы выравниваются вертикально по центру контейнера.
-                </li>
-                <li>
-                    <code>baseline</code>: Элементы отображаются на базовой линии контейнера.
-                </li>
-                <li>
-                    <code>stretch</code>: Элементы растягиваются, чтоб заполнить контейнер.
-                </li>
+
+                <PropertyWrapper property={'flex-start'} itDoes={': Элементы выравниваются по верхнему краю контейнера'}/>
+                <PropertyWrapper property={'flex-end'} itDoes={': Элементы выравниваются по нижнему краю контейнера.'}/>
+                <PropertyWrapper property={'center'} itDoes={': Элементы выравниваются вертикально по центру контейнера.'}/>
+                <PropertyWrapper property={'baseline'} itDoes={': Элементы отображаются на базовой линии контейнера.'}/>
+                <PropertyWrapper property={'stretch'} itDoes={': Элементы растягиваются, чтоб заполнить контейнер.'}/>
             </ul>
         </>),
 
@@ -148,9 +121,7 @@ import classes from './titles.module.css'
         (<p>
             Направь лягушонка в центр пруда, используя 
             <CodeWrapper href={justifyContent}>justify-content.</CodeWrapper> и 
-
             <CodeWrapper href={alignItems}>align-items.</CodeWrapper> вместе. 
-
         </p>),
 
 
@@ -161,7 +132,6 @@ import classes from './titles.module.css'
             Лягушатам снова нужно пересечь пруд. В этот раз к лилиям, 
             с достаточно большим пространством вокруг них. Используй комбинацию 
             <CodeWrapper href={justifyContent}>justify-content.</CodeWrapper> и
-
             <CodeWrapper href={alignItems}>align-items.</CodeWrapper>
         </p>),
 
@@ -173,24 +143,15 @@ import classes from './titles.module.css'
             <p>
                 Лягушатам нужно выстроиться в порядке их лилий, используя
             <CodeWrapper href={flexDirection}>flex-direction.</CodeWrapper>
-
                 Это CSS свойство задает направление, 
                 в котором будут расположены элементы в контейнере, и принимает следующие значения:
             </p>
 
             <ul>
-                <li>
-                    <code>row</code>: элементы размещаются по направлению текста.
-                </li>
-                <li>
-                    <code>row-reverse</code>: элементы отображаются в обратном порядке к направлению текста.
-                </li>
-                <li>
-                    <code>column</code>: элементы располагаются сверху вниз.
-                </li>
-                <li>
-                    <code>column-reverse</code>: элементы располагаются снизу вверх.
-                </li>
+                <PropertyWrapper property={'row'} itDoes={': Элементы размещаются по направлению текста'}/>
+                <PropertyWrapper property={'row-reverse'} itDoes={': элементы отображаются в обратном порядке к направлению текста.'}/>
+                <PropertyWrapper property={'column'} itDoes={': элементы располагаются сверху вниз.'}/>
+                <PropertyWrapper property={'column-reverse'} itDoes={': элементы располагаются снизу вверх.'}/>
             </ul>
         </>),
 
@@ -207,18 +168,10 @@ import classes from './titles.module.css'
             </p>
 
             <ul>
-                <li>
-                    <code>row</code>: Элементы размещаются по направлению текста.
-                </li>
-                <li>
-                    <code>row-reverse</code>: Элементы отображаются в обратном порядке к направлению текста.
-                </li>
-                <li>
-                    <code>column</code>: Элементы распологаются сверху вниз.
-                </li>
-                <li>
-                    <code>column-reverse</code>: Элементы распологаются снизу вверх.
-                </li>
+                <PropertyWrapper property={'row'} itDoes={': Элементы размещаются по направлению текста'}/>
+                <PropertyWrapper property={'row-reverse'} itDoes={': элементы отображаются в обратном порядке к направлению текста.'}/>
+                <PropertyWrapper property={'column'} itDoes={': элементы располагаются сверху вниз.'}/>
+                <PropertyWrapper property={'column-reverse'} itDoes={': элементы располагаются снизу вверх.'}/>
             </ul>
         </>),
 
@@ -230,7 +183,6 @@ import classes from './titles.module.css'
         Помоги лягушатам попасть на свои лилии. Хоть и кажется, 
         что они почти на своих местах, все же придется применить и
         <CodeWrapper href={flexDirection}>flex-direction</CodeWrapper> и
-        
         <CodeWrapper href={justifyContent}>justify-content</CodeWrapper>,
         чтоб поместить их на свои лилии.
     </p>
@@ -248,7 +200,6 @@ import classes from './titles.module.css'
     <p>
         Помоги лягушатам найти их лилии с помощью 
         <CodeWrapper href={flexDirection}>flex-direction</CodeWrapper> и
-
         <CodeWrapper href={justifyContent}>justify-content</CodeWrapper>.
     </p>
 
@@ -327,20 +278,9 @@ import classes from './titles.module.css'
         </p>
 
         <ul>
-            <li>
-                <CodeWrapper>
-                    nowrap
-                </CodeWrapper>
-                : Размеры элементов устанавливаются автоматически, чтоб они поместились в один ряд.
-            </li>
-            <li>
-                <CodeWrapper>wrap</CodeWrapper>
-                : Элементы автоматически переносятся на новую строку.
-            </li>
-            <li>
-                <CodeWrapper>wrap-reverse</CodeWrapper>
-                : Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.
-            </li>
+            <PropertyWrapper property={'nowrap'} itDoes={': Размеры элементов устанавливаются автоматически, чтоб они поместились в один ряд.'}/>
+            <PropertyWrapper property={'wrap'} itDoes={' : Элементы автоматически переносятся на новую строку.'}/>
+            <PropertyWrapper property={'wrap-reverse'} itDoes={' : Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.'}/>            
         </ul>
     </>),
 
@@ -350,12 +290,8 @@ import classes from './titles.module.css'
     (<>
     <p>
         Помоги этой армии лягушат выстроиться в три колонки с помощью комбинации 
-        <CodeWrapper href={flexDirection}>
-            flex-direction
-        </CodeWrapper> и 
-        <CodeWrapper href={flexWrap}>
-            flex-wrap
-        </CodeWrapper>.
+        <CodeWrapper href={flexDirection}>flex-direction</CodeWrapper> и 
+        <CodeWrapper href={flexWrap}>flex-wrap</CodeWrapper>.
     </p>
     </>),
 
@@ -364,26 +300,15 @@ import classes from './titles.module.css'
     (<>
         <p>
             Два свойства 
-            <CodeWrapper href={flexDirection}>
-                flex-direction
-            </CodeWrapper> и 
-            <CodeWrapper href={flexWrap}>
-                flex-wrap
-            </CodeWrapper> 
-                используются так часто вместе, что было создано свойство 
+            <CodeWrapper href={flexDirection}>flex-direction</CodeWrapper> и 
+            <CodeWrapper href={flexWrap}>flex-wrap</CodeWrapper> используются так часто вместе, что было создано свойство 
             <CodeWrapper href={flexFlow}>flex-flow</CodeWrapper> 
             для их комбинирования. Это свойство принимает значения двух этих свойств, разделеные пробелом.
         </p>
-
-
         <p>
             Например, ты можешь использовать 
-            <CodeWrapper>
-                flex-flow: row wrap
-            </CodeWrapper>, чтоб элементы располагались в ряд и автоматически переносились на новую строку.
+            <PropertyWrapper property={'flex-flow: row wrap'} itDoes={', чтоб элементы располагались в ряд и автоматически переносились на новую строку.'} />
         </p>
-
-
         <p>
             Попробуй использовать <CodeWrapper href={flexFlow}>flex-flow</CodeWrapper>, чтоб повторить предыдущий уровень.
         </p>
@@ -395,64 +320,29 @@ import classes from './titles.module.css'
     (<>
         <p>
             Лягушат раскидало по всему пруду, но лилии сгруппированы в верхней части. Ты можешь использовать 
-            <CodeWrapper href={alignContent}>
-                align-content
-            </CodeWrapper>
+            <CodeWrapper href={alignContent}>align-content</CodeWrapper>
             , чтобы указать, как несколько рядов должны отделяться друг от друга. 
             Данное свойство принимает следующие значения:
         </p>
 
 
         <ul>
-            <li>
-                <CodeWrapper>
-                    flex-start
-                </CodeWrapper>
-                : Ряды группируются в верхней части контейнера.
-            </li>
-            <li>
-                <CodeWrapper>
-                    flex-end
-                </CodeWrapper>
-                : Ряды группируются в нижней части контейнера.
-            </li>
-            <li>
-                <CodeWrapper>
-                    center
-                </CodeWrapper>
-                : Ряды группируются вертикально по центру контейнера.
-            </li>
-            <li>
-                <CodeWrapper>
-                    space-between
-                </CodeWrapper>
-                : Ряды отображаются с одинаковыми расстояниями между ними.
-            </li>
-            <li><CodeWrapper>
-                space-around
-                </CodeWrapper>
-                : Ряды отображаются с одинаковыми расстояниями вокруг них.
-            </li>
-            <li><CodeWrapper>
-                stretch
-                </CodeWrapper>
-                : Ряды растягиваются, чтоб заполнить контейнер равномерно.
-            </li>
+            <PropertyWrapper property={'flex-start'} itDoes={': Ряды группируются в верхней части контейнера.'} />
+            <PropertyWrapper property={'flex-end'} itDoes={': Ряды группируются в нижней части контейнера.'} />
+            <PropertyWrapper property={'center'} itDoes={': Ряды группируются вертикально по центру контейнера.'} />
+            <PropertyWrapper property={'space-between'} itDoes={': Ряды отображаются с одинаковыми расстояниями между ними.'} />
+            <PropertyWrapper property={'space-around'} itDoes={': Ряды отображаются с одинаковыми расстояниями вокруг них.'} />
+            <PropertyWrapper property={'stretch'} itDoes={': Ряды растягиваются, чтоб заполнить контейнер равномерно.'} />
         </ul>
 
 
         <p>
             Это может запутать, но 
-            <CodeWrapper href={alignContent}>
-                align-content
-            </CodeWrapper>
+            <CodeWrapper href={alignContent}>align-content</CodeWrapper>
              отвечает за расстояние между рядами, в то время как 
-            <CodeWrapper href={alignItems}>
-                 align-items
-            </CodeWrapper> отвечает за то, как элементы в целом будут выровнены в контейнере. Когда только один ряд, 
-            <CodeWrapper href={alignContent}>
-                align-content
-            </CodeWrapper> ни на что не влияет.
+            <CodeWrapper href={alignItems}>align-items</CodeWrapper> 
+            отвечает за то, как элементы в целом будут выровнены в контейнере. Когда только один ряд, 
+            <CodeWrapper href={alignContent}>align-content</CodeWrapper> ни на что не влияет.
         </p>
     </>),
 
@@ -461,9 +351,7 @@ import classes from './titles.module.css'
     (<>
         <p>
             Теперь течение сгруппировало лилии в нижней части. Используй 
-            <CodeWrapper href={alignContent}>
-                align-content
-            </CodeWrapper>, чтоб направить лягушат туда.
+            <CodeWrapper href={alignContent}>align-content</CodeWrapper>, чтоб направить лягушат туда.
         </p>
     </>),
 
@@ -473,61 +361,26 @@ import classes from './titles.module.css'
     (<>
         <p>
             Лягушата были на вечеринке, но уже пора возвращаться домой. Используй комбинацию 
-            <CodeWrapper href={flexDirection}>
-                flex-direction
-            </CodeWrapper> и 
-            <CodeWrapper href={alignContent}>
-                align-content
-            </CodeWrapper>, чтоб отправить их к своим лилиям.
+            <CodeWrapper href={flexDirection}>flex-direction</CodeWrapper> и 
+            <CodeWrapper href={alignContent}>align-content</CodeWrapper>, чтоб отправить их к своим лилиям.
         </p>
     </>),
 
 
+    // 24 level
 
     (<>
         <p>Доставь лягушат по домам в последний раз, используя CSS свойства, которые ты выучил:</p>
 
         <ul>
-            <li>
-                <CodeWrapper href={justifyContent}>
-                    justify-content
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={alignItems}>
-                    align-items
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={flexDirection}>
-                    flex-direction
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={order}>
-                    order
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={alignSelf}>
-                    align-self
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={flexWrap}>
-                    flex-wrap
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={flexFlow}>
-                    flex-flow
-                </CodeWrapper>
-            </li>
-            <li>
-                <CodeWrapper href={alignContent}>
-                    align-content
-                </CodeWrapper>
-            </li>
+            <li><CodeWrapper href={justifyContent}>justify-content</CodeWrapper></li>
+            <li><CodeWrapper href={alignItems}>align-items</CodeWrapper></li>
+            <li><CodeWrapper href={flexDirection}>flex-direction</CodeWrapper></li>
+            <li><CodeWrapper href={order}>order</CodeWrapper></li>
+            <li><CodeWrapper href={alignSelf}>align-self</CodeWrapper></li>
+            <li><CodeWrapper href={flexWrap}>flex-wrap</CodeWrapper></li>
+            <li><CodeWrapper href={flexFlow}>flex-flow</CodeWrapper></li>
+            <li><CodeWrapper href={alignContent}>align-content</CodeWrapper></li>
         </ul>
     </>)
     

@@ -8,7 +8,6 @@ import Footer from './Footer/Footer';
 
 export default function Sidebar() {
 
-
     return (
         <section className={classes.Sidebar}>
 
