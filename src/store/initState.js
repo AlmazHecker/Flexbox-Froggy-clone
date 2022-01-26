@@ -287,11 +287,11 @@ const initState = {
         level: 24,
         current: false,
         done: false,
-        lines: 4,
+        lines: 3,
         colors: ['red', 'green', 'green', 'green', 'green', 'yellow', 'yellow'],
         lilypadStyle: { flexFlow: 'column-reverse wrap-reverse' , alignContent: 'space-between', justifyContent: 'center'},
         userAnswer: '',
-        correctAnswer: 'flexFlow: column-reverse wrap-reverse; align-content: space-between; justify-content: center;',
+        correctAnswer: 'flex-flow: column-reverse wrap-reverse; align-content: space-between; justify-content: center;',
     }
 
     ],
