@@ -1,63 +1,59 @@
-
-
-
 * {
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 code {
-    padding: 0 2px;
-    background-color: rgba(255, 255, 255, 0.2);
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 900;
-    white-space: nowrap;
+   padding: 0 2px;
+   background-color: rgba(255, 255, 255, 0.2);
+   font-family: 'Source Code Pro', monospace;
+   font-weight: 900;
+   white-space: nowrap;
 }
 
 li {
-    line-height: 1.5;
+   line-height: 1.5;
 }
 
-
 button {
-    display: inline-block;
-    padding: 0.4em 0.8em;
-    background-color: #D11606;
-    border: none;
-    border-radius: 4px;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-appearance: none;
-    appearance: none;
+   display: inline-block;
+   padding: 0.4em 0.8em;
+   background-color: #d11606;
+   border: none;
+   border-radius: 4px;
+   font-family: 'PT Sans', sans-serif;
+   font-size: 16px;
+   line-height: 24px;
+   color: #fff;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   -webkit-appearance: none;
+   appearance: none;
 }
 
 pre {
-    margin: 0;
+   margin: 0;
 }
 
 a {
-    color: rgba(255, 255, 255, 0.7);
+   color: rgba(255, 255, 255, 0.7);
 }
 
 body {
-
-    margin: 0;
-    padding: 0;
-    font-family: 'PT Sans', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #43a047;
+   font-family: 'PT Sans', sans-serif;
 }
 
 * {
-    color: rgba(255, 255, 255, 0.8);
+   color: rgba(255, 255, 255, 0.8);
 }
 
 textarea {
-    margin-left: 16px;
+   margin-left: 16px;
 }
 
 /* body {
